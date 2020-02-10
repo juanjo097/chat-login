@@ -1,28 +1,32 @@
-const mongoose = require('mongoose');
-const squema = mongoose.Schema();
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-// squema for users information
-const user_squema = new squema({
-	name: {
-	  type: String,
-	  required: true
+// creating a new Schema
+const UserSchema = new Schema({
+	name: 
+	{
+    	type: String,
+    	required: true
+  	},
+	email: 
+	{
+    	type: String,
+    	required: true
+  	},
+	password: 
+	{
+    	type: String,
+    	required: true
+  	},
+	date: 
+	{
+    	type: Date,
+    	default: Date.now
 	},
-	email: {
-	  type: String,
-	  required: true
-	},
-	password: {
-	  type: String,
-	  required: true
-	},
-	date: {
-	  type: Date,
-	  default: Date.now
-	},
-	status : {
-	   type : Boolean,
-	   default : true 
-	}
+	status : 
+	{
+		type: Boolean,
+		default : true
+	}  
 });
-
-module.exports = user = mongoose.model("users", user_squema);
+module.exports = User = mongoose.model("users", UserSchema);
